@@ -1,12 +1,16 @@
-#Summary of the program... Written by Andy Mitofsky... open license?
+#This program is written by Andy Mitofsky on April 18, 2023.
+#It is my entry for the April 2023 AngelHack Data Visualization Contest.
+#The data is taken from the Times Higher Education World University Rankings for 2023
+#available at https://www.kaggle.com/datasets/r1chardson/the-world-university-rankings-2011-2023
+#According to https://www.worldometers.info/gdp/gdp-by-country/ the top eigth countries by gdp are
+#US, China, Japan, Germany, India, UK, France, and Brazil, so I used these countries.
+#This file is open source under the terms of the MIT license.
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
 
 #Here's the data for the figure comparing universities of different countries.
-#According to https://www.worldometers.info/gdp/gdp-by-country/ the top eigth countries by gdp are
-#US, China, Japan, Germany, India, UK, France, and Brazil, so I used these countries.
 us_teaching=[94.8, 94.2, 90.7, 90.9, 87.6, 86.4, 92.6, 89.4, 86.5,86]
 us_research=[99,96.7, 93.6, 97, 95.9, 95.8, 92.7, 87.7, 88.8,88.8]
 ch_teaching=[90.1,92.5,71.8,75.3,67.3,65,58.4,29.8,43.5,42.2]
@@ -45,13 +49,13 @@ def setupAxis(axisA):
     axisA.grid(visible=True)
 
 #Set up the axes, title, and textbox at the bottom.
-fig, (ax1, ax2)=plt.subplots(1, 2, figsize=(14,7))
+fig, (ax1, ax2)=plt.subplots(1, 2, figsize=(12.5,6.25))
 setupAxis(ax1)
 setupAxis(ax2)
 fig.tight_layout(pad=6)
 plt.suptitle("Comparing Teaching and Research Scores For Various Universities", fontsize=22)
-plt.text(0.02, 0.02, "Data for 2023 from The Times Higher Education world University Rankings, \
-available at https://www.kaggle.com/datasets/r1chardson/the-world-university-rankings-2011-2023", fontsize=11, transform=plt.gcf().transFigure)
+plt.text(0.01, 0.04, "Data for 2023 from The Times Higher Education World University Rankings, \
+available at https://www.kaggle.com/datasets/r1chardson/the-world-university-rankings-2011-2023", fontsize=10, transform=plt.gcf().transFigure)
 
 #Plot the figure comparing universities of different countries.
 ax1.set_title("Top Ten Universities by Countries")
